@@ -6,4 +6,4 @@ team members:hewendeng, zeqichen, yiyangli
 
 date: 2021/12/23 by hewendeng
 
-异常检测后的数据集: 传输链接：https://cowtransfer.com/s/0db7db7d15bb45 或 打开【奶牛快传】cowtransfer.com 使用传输口令：kxjzlc 提取；
+异常检测后的数据集: 传输链接：https://cowtransfer.com/s/0db7db7d15bb45 
