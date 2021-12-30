@@ -5,3 +5,5 @@ here we record the process of our work and share code
 team members:hewendeng, zeqichen, yiyangli
 
 date: 2021/12/23 by hewendeng
+
+异常检测后的数据集: 传输链接：https://cowtransfer.com/s/0db7db7d15bb45 
