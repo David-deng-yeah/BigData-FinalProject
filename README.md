@@ -6,4 +6,7 @@ team members:hewendeng, zeqichen, yiyangli
 
 date: 2021/12/23 by hewendeng
 
-异常检测后的数据集: 传输链接：https://cowtransfer.com/s/0db7db7d15bb45 
+
+![架构图](https://user-images.githubusercontent.com/65102150/147812996-e37b4a53-1cf7-45c7-a1da-35b8ed597434.JPG)
+
+异常检测后的数据集:
