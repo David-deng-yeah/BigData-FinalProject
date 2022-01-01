@@ -13,13 +13,40 @@ import logging
 import warnings
 warnings.filterwarnings('ignore') 
 
-def anomaly_detection_(X, outliers_fraction=0.005, Standard=True):
+# def anomaly_detection_(X, outliers_fraction=0.005, Standard=True):
+#     '''
+#     输入RSP，返回除去异常值的RSP
+#     @param: X RSP数据块
+#     @param: outliers_fraction 异常值比例
+#     '''
+#     try:
+
+#         # 这里帮用户标准化了
+#         if(Standard):
+#             fea = X.columns
+#             X[fea] = StandardScaler().fit_transform(X[fea])
+#         # 训练异常检测器
+#         IF = IForest(
+#             contamination=outliers_fraction,
+#             random_state=0
+#         )
+#         IF.fit(X)
+#         y_pred = IF.predict(X)
+#         X_AD = X.iloc[y_pred != 1, :]# 剔除异常值的好数据
+#         return (X_AD, y_pred)
+#     except:
+#         logging.warning("error")
+#     return None
+def anomaly_detection_(Block, outliers_fraction=0.005, Standard=True):
     '''
     输入RSP，返回除去异常值的RSP
     @param: X RSP数据块
     @param: outliers_fraction 异常值比例
     '''
     try:
+        # 分割df
+        X = Block.drop('label', axis=1)
+        y = Block['label']
         # 这里帮用户标准化了
         if(Standard):
             fea = X.columns
@@ -32,11 +59,12 @@ def anomaly_detection_(X, outliers_fraction=0.005, Standard=True):
         IF.fit(X)
         y_pred = IF.predict(X)
         X_AD = X.iloc[y_pred != 1, :]# 剔除异常值的好数据
+        y_AD = y.iloc[y_pred != 1]
+        X_AD['label'] = y_AD
         return (X_AD, y_pred)
     except:
-        logging.warning("error")
+        logging.warning("异常处理出错")
     return None
-
 
 def plot_pca(num, data, label):
     '''
