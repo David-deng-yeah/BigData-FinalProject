@@ -50,7 +50,8 @@ def anomaly_detection_(Block, outliers_fraction=0.005, Standard=True):
         # 这里帮用户标准化了
         if(Standard):
             fea = X.columns
-            X[fea] = StandardScaler().fit_transform(X[fea])
+            ss = StandardScaler()
+            X[fea] = ss.fit_transform(X[fea])
         # 训练异常检测器
         IF = IForest(
             contamination=outliers_fraction,
